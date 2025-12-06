@@ -266,7 +266,7 @@ class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
     ];
     $d = [];
     if (is_string($value)) {
-      $value = str_replace('{PATH}', $value, $this->route);
+      $value = str_replace('{PATH}', $this->route, $value);
       $d['image'] = $value;
     } else if (is_array($value)) {
       $data = array_merge($data, $value);
@@ -289,7 +289,7 @@ class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
       //echo "DIR! " . $dir;
       foreach (glob($pattern, \GLOB_BRACE) as $filename) {
           //echo "$filename\n";
-          $this->addImage($filename);
+          $this->addImage('{PATH}' . $filename);
       }
       chdir($prevDir);
     } else {

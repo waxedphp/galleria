@@ -85,8 +85,8 @@
         this.free();
         if (typeof loadedThemes[this.theme] == 'undefined') {
           loadedThemes[this.theme] = 1;
-          $('head').append('<link rel="stylesheet" type="text/css" href="assets/galleria/themes/'+this.theme+'/galleria.'+this.theme+'.min.css">');
-          Galleria.loadTheme('assets/galleria/themes/'+this.theme+'/galleria.'+this.theme+'.min.js');
+          $('head').append('<link rel="stylesheet" type="text/css" href="/assets/galleria/themes/'+this.theme+'/galleria.'+this.theme+'.min.css">');
+          Galleria.loadTheme('/assets/galleria/themes/'+this.theme+'/galleria.'+this.theme+'.min.js');
         };
         Galleria.run(that.element, structuredClone(this.cfg));
         //console.log(this.galleria);
