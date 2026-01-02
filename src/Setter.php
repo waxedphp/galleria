@@ -287,7 +287,9 @@ class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
     if (is_dir($dir)) {
       chdir($dir);
       //echo "DIR! " . $dir;
-      foreach (glob($pattern, \GLOB_BRACE) as $filename) {
+      $a = glob($pattern, \GLOB_BRACE);
+      asort($a);
+      foreach ($a as $filename) {
           //echo "$filename\n";
           $this->addImage('{PATH}' . $filename);
       }
